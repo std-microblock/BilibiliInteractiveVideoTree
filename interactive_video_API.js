@@ -1,10 +1,9 @@
-let graphinfo=1000000,edgeidList=[]
+let graphinfo=1000000,edgeidList={}
 
 async function getInitalTree(bid) {
     let response=await fetch("https://api.bilibili.com/x/stein/edgeinfo_v2?bvid=BV" + bid + "&graph_version="+graphinfo+"&platform=pc&portal=0&screen=0&choices=")
     let json=await response.json() 
     return parseJsonToTree(json)
-
 }
 
 async function getGraphInfo(cid,aid,bid){
@@ -35,17 +34,18 @@ async function getFullTree(bid,deep=20){
     console.log(initaltree.videoData.title)
     graphinfo=await getGraphInfo(initaltree.videoData.cid,initaltree.videoData.aid,initaltree.videoData.bvid.replace("BV",""))
     
-    async function getTreeDG(bid,edgeid,deepNow){
+    async function getTreeDG(bid,edgeid,deepNow,eList=[]){
         if(deepNow<=0)return ;
-        if(edgeidList.includes(edgeid))return 0;
-        edgeidList.push(edgeid)
+        if(eList.includes(edgeid))return 0;
         let a=await getTree(bid,edgeid)
         for(var y=0;y<a.length;y++){
             let item=a[y]
             for(var x=0;x<item.length;x++){
                 let itemF=item[x]
+eList.push(edgeid)
                 console.log("    ".repeat(deep-deepNow)+"-"+itemF.description)
-                await getTreeDG(bid,itemF.pid,deepNow-1)
+                await getTreeDG(bid,itemF.pid,deepNow-1,eList)
+eList.pop()
             }
                
          
