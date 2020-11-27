@@ -1,6 +1,10 @@
 # BilibiliInteractiveVideoTree
 Bilibili互动视频剧情树获取
 
+示例用法:`getFullTree(/BV(\S+)/.exec(bvid)[1])`
+
+老早以前写的了，不是很好，抱歉...
+
 提供函数:
 ```
 getFullTree(bid,deep=20)
