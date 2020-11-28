@@ -10,9 +10,10 @@ Bilibili互动视频剧情树获取
 document.body.appendChild((a=document.createElement("script"),a.src="https://cdn.jsdelivr.net/gh/MicroCBer/BilibiliInteractiveVideoTree/bivt_fastload.js",a))
 ```
 或者将下面的链接拉入书签（[Bookmarklet](http://s.ymb.ink/?Bookmarklet)）
-[拉我进入书签！](javascript:!(function (){document.body.appendChild((a=document.createElement("script"),a.src="https://cdn.jsdelivr.net/gh/MicroCBer/BilibiliInteractiveVideoTree@3/bivt_fastload.js",a))})())
+[拉我进入书签！](javascript%3A%21%28function%20%28%29%7Bdocument.body.appendChild%28%28a%3Ddocument.createElement%28%22script%22%29%2Ca.src%3D%22https%3A//cdn.jsdelivr.net/gh/MicroCBer/BilibiliInteractiveVideoTree@3/bivt_fastload.js%22%2Ca%29%29%7D%29%28%29)
+
 再或者将如下代码作为网址收藏
-```url
+```
 javascript:!(function (){document.body.appendChild((a=document.createElement("script"),a.src="https://cdn.jsdelivr.net/gh/MicroCBer/BilibiliInteractiveVideoTree@3/bivt_fastload.js",a))})()
 ```
 
